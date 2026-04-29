@@ -301,29 +301,85 @@
       line-height: 1.6;
     }
 
-    /* ── Screenshots placeholder ──────────────────────────────── */
+    /* ── Screenshots ──────────────────────────────────────────── */
     .screenshots {
       background: var(--bg);
       border-top: 1px solid var(--border);
     }
 
-    .screenshots-placeholder {
-      background: var(--bg-card);
-      border: 2px dashed var(--border);
-      border-radius: 20px;
-      padding: 4rem 2rem;
+    .screenshots-scroll {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      padding-bottom: 1.5rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar-track {
+      background: var(--border);
+      border-radius: 3px;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    .screenshot-item {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
       text-align: center;
-      color: var(--muted);
     }
 
-    .screenshots-placeholder p {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+    .screenshot-item img {
+      width: 240px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     }
 
-    .screenshots-placeholder small {
+    .screenshot-label {
+      margin-top: 0.75rem;
       font-size: 0.85rem;
-      opacity: 0.6;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── Video ──────────────────────────────────────────────────── */
+    .video-section {
+      margin-top: 3rem;
+    }
+
+    .video-container {
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .video-container video {
+      width: 100%;
+      display: block;
+    }
+
+    .video-label {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .screenshot-item img { width: 200px; }
+      .video-container { max-width: 280px; }
     }
 
     /* ── CTA bottom ───────────────────────────────────────────── */
@@ -536,10 +592,53 @@
   <div class="section-inner">
     <p class="section-label">The App</p>
     <h2 class="section-title">See It in Action</h2>
-    <p class="section-subtitle">Screenshots and demos coming soon.</p>
-    <div class="screenshots-placeholder">
-      <p>App preview coming soon</p>
-      <small>Screenshots and video walkthrough will be added here</small>
+    <p class="section-subtitle">Swipe through the app to see how faith and fitness come together.</p>
+
+    <div class="screenshots-scroll">
+      <div class="screenshot-item">
+        <img src="images/screen-home.jpg" alt="Home screen with today's workout plan and scripture" loading="lazy">
+        <p class="screenshot-label">Home</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screen-workout.jpg" alt="Active workout with scripture and set logging" loading="lazy">
+        <p class="screenshot-label">Active Workout</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screen-plans.jpg" alt="Biblical workout plans library" loading="lazy">
+        <p class="screenshot-label">Plans</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screen-progress.jpg" alt="Progress tracking with volume and PR charts" loading="lazy">
+        <p class="screenshot-label">Progress</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screen-coach.jpg" alt="AI coach providing pre-workout prayer" loading="lazy">
+        <p class="screenshot-label">AI Coach</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screen-achievements.jpg" alt="Armor of God achievement cards" loading="lazy">
+        <p class="screenshot-label">Achievements</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screen-discipleship.jpg" alt="Discipleship cards with Biblical figures" loading="lazy">
+        <p class="screenshot-label">Discipleship</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="images/screen-weekly.jpg" alt="Weekly check-in with wellness tracking" loading="lazy">
+        <p class="screenshot-label">Weekly Check-in</p>
+      </div>
+    </div>
+
+    <div class="video-section">
+      <h3 style="color: var(--gold); font-size: 1.1rem; text-align: center; margin-bottom: 1rem;">Rest Timer in Action</h3>
+      <div class="video-container">
+        <video controls playsinline preload="metadata" poster="images/screen-workout.jpg">
+          <source src="images/rest-timer-demo.mov" type="video/quicktime">
+          <source src="images/rest-timer-demo.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="video-label">Scripture and devotionals during rest periods</p>
     </div>
   </div>
 </section>
