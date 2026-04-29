@@ -438,8 +438,10 @@
     }
 
     @media (max-width: 768px) {
-      .screenshot-item img { width: 140px; }
-      .screenshot-item.active img { width: 240px; }
+      .carousel-wrapper { overflow: hidden; }
+      .carousel-track { gap: 0; }
+      .screenshot-item:not(.active) { display: none; }
+      .screenshot-item.active img { width: 260px; }
       .carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
       .video-container { max-width: 280px; }
     }
