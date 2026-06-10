@@ -21,7 +21,7 @@
 <div class="container">
 
 <h1>Privacy Policy</h1>
-<p class="date">Effective Date: May 27, 2026</p>
+<p class="date">Effective Date: May 27, 2026 · Last updated: June 10, 2026</p>
 
 <p>Iron &amp; Grace ("we," "our," or "the App") is a faith-based fitness application. This Privacy Policy explains what information we collect, how we use it, and your choices.</p>
 
@@ -43,13 +43,15 @@
 </ul>
 <p>Anthropic does not use your conversations to train their AI models per their commercial API terms. Anthropic's data handling practices are governed by their privacy policy available at <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a>. You will be asked to provide consent to this data sharing the first time you open the AI Coach feature in the app.</p>
 
-<p><strong>Heart Rate Data.</strong> If you connect a Bluetooth heart rate monitor, heart rate readings are collected during workouts. This data stays on your device and in your private Firestore record.</p>
-
 <p><strong>Content Preferences.</strong> Faith content depth, voice and music preferences, and app personality selection.</p>
 
 <p><strong>Device Information.</strong> Push notification tokens (to send workout reminders and milestone alerts). We do not collect device IDs, IP addresses, or location data.</p>
 
 <p><strong>Payment Information.</strong> Subscriptions are processed by Apple (App Store) and managed through RevenueCat. We never receive or store your credit card number, billing address, or other payment details.</p>
+
+<p><strong>Weekly Check-in Emails.</strong> When you send a weekly update, your name, training stats, and any progress photos you attach are emailed — via our email provider, Resend — to the recipient addresses you designate (such as your own email and your coach's). The contents of these emails are not stored on our servers.</p>
+
+<p><strong>Crash &amp; Diagnostic Data.</strong> If the App encounters an error, we collect crash reports and basic diagnostic information (device model, operating system version, app version, and non-identifying error context) through Sentry to diagnose and fix problems. We do not enable collection of your IP address or precise location.</p>
 
 <h2>2. How We Use Your Information</h2>
 <ul>
@@ -61,7 +63,7 @@
 </ul>
 
 <h2>3. Data Storage &amp; Security</h2>
-<p>Your data is stored in Google Firebase (Firestore) under your unique user ID. Firestore security rules ensure that only you can read and write your own data. All data is transmitted over HTTPS. Profile photos are stored locally on your device only and are not uploaded to our servers.</p>
+<p>Your data is stored in Google Firebase (Firestore) under your unique user ID. Firestore security rules ensure that only you can read and write your own data. All data is transmitted over HTTPS. Profile photos are stored locally on your device only and are not uploaded to our servers. Progress photos you attach to a weekly check-in are likewise not stored on our servers, but are transmitted through our email provider (Resend) to the recipients you choose.</p>
 
 <h2>4. Data Sharing</h2>
 <p>We do not sell, rent, or share your personal information with third parties for marketing purposes. Data is shared only with:</p>
@@ -69,6 +71,8 @@
   <li><strong>Firebase / Google Cloud</strong> — infrastructure and authentication</li>
   <li><strong>Anthropic</strong> — AI coach message processing (via server-side proxy; no direct client-to-Anthropic communication)</li>
   <li><strong>RevenueCat</strong> — subscription management</li>
+  <li><strong>Resend</strong> — delivery of the weekly check-in and feedback emails you choose to send</li>
+  <li><strong>Sentry</strong> — crash and diagnostic reporting to keep the App stable</li>
   <li><strong>Apple / Google</strong> — payment processing through their respective app stores</li>
 </ul>
 
